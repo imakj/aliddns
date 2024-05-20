@@ -22,7 +22,26 @@ aliddns by python
 2. 手动设置ip   `python3 ./aliddns.py www baidu.com A --value 1.1.1.1`
 
 
+#### aliddns.sh
+1. 可以更新一组python列表。将所有数组写入domains。就会顺序更新所有列表。支持更新当前账号授权key下的所有域名
+```
+declare -a domains=(
+    "storage yzltech.com"
+    "storage yzltech.com"
+    "dev yzltech.com"
+    "gitlab yzltech.com"
+    "vpn yzltech.com"
+    "lsh yzltech.com"
+    "sk yzltech.com"
+    "seoms cloudlism.com"
+)
+```
 
+#### 定时任务
+每10分钟执行一次脚本
+```
+*/10 * * * * /opt/yzl/aliddns/aliddns.sh > /dev/null 2>&1
+```
 #### 配合群晖使用
 
 配合群晖计划任务使用时，由于编码问题，需要在计划任务执行的代码里填入如下代码
