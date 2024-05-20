@@ -1,4 +1,4 @@
-# aliddns
+# aliddns.py
 aliddns by python
 
 ### 使用方式
